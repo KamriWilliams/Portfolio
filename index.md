@@ -2,122 +2,54 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Hi, I’m Kamri.
 
-[Link to another page](./another-page.html).
+I’m an Application Support Engineer and emerging data professional focused on data science, technical problem-solving, and real-world impact.
 
-There should be whitespace between paragraphs.
+I use my background in support engineering, troubleshooting, SQL, Python, and process improvement to turn messy problems into clearer systems, better insights, and practical solutions.
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+## What I’m Building Toward
 
-# Header 1
+I’m currently pursuing my M.S. in Data Science and building a portfolio that connects my technical experience with my interests in analytics, machine learning, fraud detection, operational efficiency, and community-centered AI.
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+## Featured Work
 
-## Header 2
+### Mom Persona AI Survey Analysis
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+A data science project using survey responses from mothers to explore how moms think about and use AI tools. This project includes text analysis, clustering, and persona development to better understand user needs and concerns.
 
-### Header 3
+**Tools:** Python, Pandas, Scikit-learn, Jupyter Notebook, NLP, Clustering
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
+### Heart Disease Prediction
 
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
+A machine learning project focused on predicting heart disease risk using classification techniques and model evaluation metrics.
 
-#### Header 4
+**Tools:** Python, Pandas, Scikit-learn, Logistic Regression, Data Visualization
 
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
+### Employee Data Cleaning Project
 
-##### Header 5
+A data cleaning project focused on identifying and correcting data quality issues, including duplicate records, missing values, invalid salary values, and inconsistent fields.
 
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
+**Tools:** Python, Pandas, Data Cleaning, Data Validation
 
-###### Header 6
+## Technical Skills
 
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+| Area | Skills |
+|:--|:--|
+| Programming & Data | Python, SQL, Pandas, NumPy |
+| Machine Learning | Scikit-learn, Logistic Regression, Clustering |
+| Data Workflows | Data Cleaning, Data Validation, Exploratory Data Analysis |
+| Tools | GitHub, Jupyter Notebook, Snowflake |
+| Professional Strengths | Technical Support, Troubleshooting, Process Improvement, Team Leadership |
 
-### There's a horizontal rule below this.
+## Beyond the Data
 
-* * *
+I’m also the founder of Melanated Mamas Golden Crescent, a nonprofit created to support and empower Black mothers in the Golden Crescent region. That work shapes how I think about data, access, community, and building tools that are actually useful to real people.
 
-### Here is an unordered list:
+## Let’s Connect
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+I’m interested in data science, analytics, machine learning, fraud analytics, and AI projects that solve practical problems.
 
-### And an ordered list:
+[View my GitHub](https://github.com/YOURUSERNAME)
 
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+[Connect with me on LinkedIn](https://linkedin.com/in/YOUR-LINKEDIN)
