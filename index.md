@@ -56,7 +56,7 @@ layout: default
     <h3>Heart Disease Prediction</h3>
     <p>Built a classification model to predict heart disease risk and evaluate model performance.</p>
     <p><strong>Tools:</strong> Python, Scikit-learn, Logistic Regression</p>
-    <p><<a href="/projects/" class="btn-primary">View Project</a></p>
+    <p><a href="/projects/" class="btn-primary">View Project</a></p>
   </div>
 </section>
 
