@@ -2,86 +2,63 @@
 layout: default
 ---
 
-<div class="intro-card">
+<section class="intro-card">
+  <h2>Engineer. Analyst. Builder.</h2>
+  <p>I’m Kamri Williams, an Application Support Engineer and data science graduate student building solutions at the intersection of technical support, analytics, AI, and real-world problem solving.</p>
 
-## Engineer. Analyst. Builder.
-
-I’m Kamri Williams, an Application Support Engineer and data science graduate student building solutions at the intersection of technical support, analytics, AI, and real-world problem solving.
-
-[View Projects](./projects.html){: .btn-primary }
-[View Resume](./resume.html){: .btn-secondary }
-
-</div>
+  <p>
+    <a href="./projects.html" class="btn-primary">View Projects</a>
+    <a href="./resume.html" class="btn-secondary">View Resume</a>
+  </p>
+</section>
 
 ---
 
 ## What I Do
 
-<div class="three-column">
+<section class="three-column">
+  <div class="info-card">
+    <h3>Technical Problem Solving</h3>
+    <p>I investigate production issues, analyze system behavior, and translate technical findings into clear next steps.</p>
+  </div>
 
-<div class="info-card">
+  <div class="info-card">
+    <h3>Data & Analytics</h3>
+    <p>I use Python, SQL, data cleaning, EDA, and machine learning to turn messy information into useful insights.</p>
+  </div>
 
-### Technical Problem Solving
-I investigate production issues, analyze system behavior, and translate technical findings into clear next steps.
-
-</div>
-
-<div class="info-card">
-
-### Data & Analytics
-I use Python, SQL, data cleaning, EDA, and machine learning to turn messy information into useful insights.
-
-</div>
-
-<div class="info-card">
-
-### Practical Impact
-I care about building solutions that help teams, customers, and communities make better decisions.
-
-</div>
-
-</div>
+  <div class="info-card">
+    <h3>Practical Impact</h3>
+    <p>I care about building solutions that help teams, customers, and communities make better decisions.</p>
+  </div>
+</section>
 
 ---
 
 ## Featured Projects
 
-<div class="project-grid">
+<section class="project-grid">
+  <div class="project-card">
+    <h3>AI Personas for Moms</h3>
+    <p>Used survey data, clustering, and NLP concepts to identify behavioral patterns in how mothers use AI tools.</p>
+    <p><strong>Tools:</strong> Python, Pandas, Scikit-learn, Clustering</p>
+    <p><a href="./projects.html">View Project</a></p>
+  </div>
 
-<div class="project-card">
+  <div class="project-card">
+    <h3>Employee Data Cleaning</h3>
+    <p>Cleaned and validated employee data by addressing duplicates, missing values, invalid salary records, and inconsistent fields.</p>
+    <p><strong>Tools:</strong> Python, Pandas, Data Validation</p>
+    <p><a href="./projects.html">View Project</a></p>
+  </div>
 
-### AI Personas for Moms
-Used survey data, clustering, and NLP concepts to identify behavioral patterns in how mothers use AI tools.
-
-**Tools:** Python, Pandas, Scikit-learn, Clustering
-
-[View Project](./projects.html)
-
-</div>
-
-<div class="project-card">
-
-### Employee Data Cleaning
-Cleaned and validated employee data by addressing duplicates, missing values, invalid salary records, and inconsistent fields.
-
-**Tools:** Python, Pandas, Data Validation
-
-[View Project](./projects.html)
-
-</div>
-
-<div class="project-card">
-
-### Heart Disease Prediction
-Built a classification model to predict heart disease risk and evaluate model performance.
-
-**Tools:** Python, Scikit-learn, Logistic Regression
-
-[View Project](./projects.html)
-
-</div>
-
-</div>
+  <div class="project-card">
+    <h3>Heart Disease Prediction</h3>
+    <p>Built a classification model to predict heart disease risk and evaluate model performance.</p>
+    <p><strong>Tools:</strong> Python, Scikit-learn, Logistic Regression</p>
+    <p><a href="./projects.html">View Project</a></p>
+  </div>
+</section>
 
 ---
 
@@ -97,12 +74,12 @@ Outside of tech, I’m the founder of Melanated Mamas Golden Crescent, a nonprof
 
 ---
 
-<div class="closing-card">
+<section class="closing-card">
+  <h2>Let’s Connect</h2>
 
-## Let’s Connect
-
-[GitHub](https://github.com/kamriwilliams){: .btn-primary }
-[Resume](./resume.html){: .btn-secondary }
-[LinkedIn](#){: .btn-secondary }
-
-</div>
+  <p>
+    <a href="https://github.com/kamriwilliams" class="btn-primary">GitHub</a>
+    <a href="./resume.html" class="btn-secondary">Resume</a>
+    <a href="#" class="btn-secondary">LinkedIn</a>
+  </p>
+</section>
