@@ -7,8 +7,8 @@ layout: default
   <p>I’m Kamri Williams, an Application Support Engineer and data science graduate student building solutions at the intersection of technical support, analytics, AI, and real-world problem solving.</p>
 
   <p>
-    <a href="./projects.html" class="btn-primary">View Projects</a>
-    <a href="./resume.html" class="btn-secondary">View Resume</a>
+    <a href="/projects/" class="btn-primary">View Projects</a>
+    <a href="/resume/" class="btn-secondary">View Resume</a>
   </p>
 </section>
 
@@ -42,21 +42,21 @@ layout: default
     <h3>AI Personas for Moms</h3>
     <p>Used survey data, clustering, and NLP concepts to identify behavioral patterns in how mothers use AI tools.</p>
     <p><strong>Tools:</strong> Python, Pandas, Scikit-learn, Clustering</p>
-    <p><a href="./projects.html">View Project</a></p>
+    <p><a href="/projects/" class="btn-primary">View Project</a></p>
   </div>
 
   <div class="project-card">
     <h3>Employee Data Cleaning</h3>
     <p>Cleaned and validated employee data by addressing duplicates, missing values, invalid salary records, and inconsistent fields.</p>
     <p><strong>Tools:</strong> Python, Pandas, Data Validation</p>
-    <p><a href="./projects.html">View Project</a></p>
+    <p><a href="/projects/" class="btn-primary">View Project</a></p>
   </div>
 
   <div class="project-card">
     <h3>Heart Disease Prediction</h3>
     <p>Built a classification model to predict heart disease risk and evaluate model performance.</p>
     <p><strong>Tools:</strong> Python, Scikit-learn, Logistic Regression</p>
-    <p><a href="./projects.html">View Project</a></p>
+    <p><<a href="/projects/" class="btn-primary">View Project</a></p>
   </div>
 </section>
 
