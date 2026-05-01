@@ -79,7 +79,7 @@ Outside of tech, I’m the founder of Melanated Mamas Golden Crescent, a nonprof
 
   <p>
     <a href="https://github.com/kamriwilliams" class="btn-primary">GitHub</a>
-    <a href="./resume.html" class="btn-secondary">Resume</a>
-    <a href="#" class="btn-secondary">LinkedIn</a>
+    <a href="/resume/" class="btn-secondary">Resume</a>
+    <a href="https://www.linkedin.com/in/kws1/" class="btn-secondary">LinkedIn</a>
   </p>
 </section>
