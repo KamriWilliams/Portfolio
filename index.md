@@ -2,78 +2,107 @@
 layout: default
 ---
 
-## About Me
+<div class="intro-card">
 
-I’m Kamri Williams, an Application Support Engineer and data science graduate student with experience solving technical issues, supporting business systems, and helping teams work through complex problems.
+## Engineer. Analyst. Builder.
 
-My background is in technical support, troubleshooting, SQL, data analysis, and process improvement. I’m currently building deeper skills in data science, machine learning, and AI, with a focus on practical solutions that support better decision-making.
+I’m Kamri Williams, an Application Support Engineer and data science graduate student building solutions at the intersection of technical support, analytics, AI, and real-world problem solving.
+
+[View Projects](./projects.html){: .btn-primary }
+[View Resume](./resume.html){: .btn-secondary }
+
+</div>
+
+---
+
+## What I Do
+
+<div class="three-column">
+
+<div class="info-card">
+
+### Technical Problem Solving
+I investigate production issues, analyze system behavior, and translate technical findings into clear next steps.
+
+</div>
+
+<div class="info-card">
+
+### Data & Analytics
+I use Python, SQL, data cleaning, EDA, and machine learning to turn messy information into useful insights.
+
+</div>
+
+<div class="info-card">
+
+### Practical Impact
+I care about building solutions that help teams, customers, and communities make better decisions.
+
+</div>
+
+</div>
+
+---
 
 ## Featured Projects
 
+<div class="project-grid">
+
+<div class="project-card">
+
 ### AI Personas for Moms
+Used survey data, clustering, and NLP concepts to identify behavioral patterns in how mothers use AI tools.
 
-A data science project using survey responses from mothers to explore how moms think about and use AI tools. This project includes text analysis, clustering, and persona development to better understand user needs, concerns, and opportunities.
+**Tools:** Python, Pandas, Scikit-learn, Clustering
 
-**Tools:** Python, Pandas, Scikit-learn, Jupyter Notebook, NLP, Clustering
+[View Project](./projects.html)
 
-[View Project](#)
+</div>
 
----
+<div class="project-card">
 
-### Employee Data Cleaning Project
+### Employee Data Cleaning
+Cleaned and validated employee data by addressing duplicates, missing values, invalid salary records, and inconsistent fields.
 
-A data cleaning project focused on identifying and correcting data quality issues, including duplicate records, missing values, invalid salary values, and inconsistent fields.
+**Tools:** Python, Pandas, Data Validation
 
-**Tools:** Python, Pandas, Data Cleaning, Data Validation
+[View Project](./projects.html)
 
-[View Project](#)
+</div>
 
----
+<div class="project-card">
 
 ### Heart Disease Prediction
+Built a classification model to predict heart disease risk and evaluate model performance.
 
-A machine learning project focused on predicting heart disease risk using classification techniques and model evaluation metrics.
+**Tools:** Python, Scikit-learn, Logistic Regression
 
-**Tools:** Python, Pandas, Scikit-learn, Logistic Regression, Data Visualization
+[View Project](./projects.html)
 
-[View Project](#)
+</div>
 
----
-
-### Support Operations Analytics
-
-A future analytics project focused on support team performance, backlog trends, ticket aging, case severity, and resolution patterns.
-
-**Focus Areas:** Operations Analytics, Support Metrics, Process Improvement, Dashboarding
-
-[Coming Soon](#)
+</div>
 
 ---
 
-## Technical Skills
+## My Focus
 
-| Area | Skills |
-|:--|:--|
-| Programming & Data | Python, SQL, Pandas, NumPy |
-| Machine Learning | Scikit-learn, Logistic Regression, Clustering |
-| Data Analysis | Data Cleaning, Exploratory Data Analysis, Data Validation |
-| Tools | GitHub, Jupyter Notebook, Snowflake, APIs |
-| Professional Strengths | Troubleshooting, Technical Support, Process Improvement, Team Leadership |
+I’m especially interested in data science, fraud analytics, AI, operational efficiency, and technical solutions that make complex problems easier to understand and act on.
 
-## What I’m Building Toward
-
-I’m interested in data science, analytics, machine learning, fraud analytics, operational efficiency, and AI projects that solve real business and community problems.
-
-My goal is to bring together my technical support experience, leadership background, and growing data science skills to build solutions that are useful, clear, and grounded in real-world needs.
+---
 
 ## Beyond the Data
 
-Outside of tech, I’m the founder of Melanated Mamas Golden Crescent, a nonprofit created to support and empower Black mothers throughout the Golden Crescent region.
+Outside of tech, I’m the founder of Melanated Mamas Golden Crescent, a nonprofit created to support and empower Black mothers throughout the Golden Crescent region. That work shapes how I think about access, impact, and building tools that are actually useful to real people.
 
-That work influences how I think about data, access, technology, and impact. I’m especially interested in using data and AI in ways that are practical, ethical, and helpful to real communities.
+---
 
-## Connect With Me
+<div class="closing-card">
 
-[GitHub](https://github.com/kamriwilliams)  
-[LinkedIn](#)  
-[Resume](#)
+## Let’s Connect
+
+[GitHub](https://github.com/kamriwilliams){: .btn-primary }
+[Resume](./resume.html){: .btn-secondary }
+[LinkedIn](#){: .btn-secondary }
+
+</div>
