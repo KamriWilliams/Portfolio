@@ -2,3 +2,107 @@
 ---
 
 @import 'jekyll-theme-cayman';
+
+/* HERO SECTION */
+.page-header {
+  background: linear-gradient(135deg, #111111 0%, #2a1a35 50%, #8a5a22 100%);
+  padding: 4rem 1rem;
+}
+
+.project-name {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.project-tagline {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 760px;
+  margin: 1rem auto 2rem;
+}
+
+/* BUTTONS */
+.btn {
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  max-width: 980px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* HEADERS */
+.main-content h2 {
+  margin-top: 3rem;
+  font-weight: 800;
+  color: #24152d;
+  border-bottom: 2px solid #ead9c5;
+  padding-bottom: 0.45rem;
+}
+
+.main-content h3 {
+  margin-top: 2rem;
+  font-weight: 700;
+  color: #4a2d5a;
+}
+
+/* TEXT */
+.main-content strong {
+  color: #8a5a22;
+}
+
+.main-content p {
+  color: #333333;
+}
+
+/* LINKS */
+.main-content a {
+  color: #6d3fa0;
+  font-weight: 600;
+}
+
+.main-content a:hover {
+  color: #8a5a22;
+}
+
+/* TABLES */
+.main-content table {
+  width: 100%;
+  display: table;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.main-content th {
+  background: #2a1a35;
+  color: white;
+}
+
+.main-content td,
+.main-content th {
+  padding: 0.9rem 1rem;
+}
+
+/* HORIZONTAL LINE */
+hr {
+  border: 0;
+  height: 1px;
+  background: #ead9c5;
+  margin: 2rem 0;
+}
+
+/* FOOTER */
+.site-footer {
+  border-top: 1px solid #ead9c5;
+  color: #666;
+}
