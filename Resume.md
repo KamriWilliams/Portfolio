@@ -10,7 +10,7 @@ permalink: /resume/
 
 Data Science Candidate | Application Support Engineer | Analytics Problem Solver
 
-[📄 Download Resume (PDF)](./Kamri-Williams-Resume.pdf)
+[📄 Download Resume (PDF)](./Kamri_Williams_Resume.pdf)
 
 ---
 
