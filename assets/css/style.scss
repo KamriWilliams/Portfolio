@@ -190,3 +190,32 @@ hr {
     padding: 1.5rem;
   }
 }
+
+/* Override Cayman default green links/headings */
+
+.page-header {
+  background: linear-gradient(135deg, #111111 0%, #2a1a35 50%, #8a5a22 100%);
+}
+
+.project-name,
+.project-tagline {
+  color: #ffffff;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+  color: #2a1a35;
+}
+
+.main-content a {
+  color: #6d3fa0;
+}
+
+.main-content a:hover {
+  color: #8a5a22;
+}
+
+.site-footer a {
+  color: #6d3fa0;
+}
