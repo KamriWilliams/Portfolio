@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Resume | Kamri Williams</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:      #f7f2ea;
+    --warm-white: #faf7f2;
+    --ink:        #2c2418;
+    --ink-soft:   #5a4f42;
+    --terracotta: #c2714f;
+    --terra-light:#e8c4b0;
+    --terra-pale: #f5e8e0;
+    --sage:       #8a9e85;
+    --sage-light: #d4e0d2;
+    --mauve:      #9e7e8a;
+    --mauve-light:#e8d8de;
+    --rule:       rgba(44,36,24,.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* —— NAV —— */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(247,242,234,.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: .02em;
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--terracotta); }
+
+  /* —— HERO —— */
+  .hero {
+    padding: 140px 64px 72px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 100px; left: 30px;
+    width: 80px; height: 80px;
+    border-top: 2px solid var(--terracotta);
+    border-left: 2px solid var(--terracotta);
+    opacity: .25;
+    border-radius: 4px 0 0 0;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 600;
+    line-height: 1.0;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--terracotta); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 520px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-decoration: none;
+    transition: transform .2s, background .2s;
+  }
+  .btn-primary { background: var(--terracotta); color: white; }
+  .btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
+  .btn-secondary { border: 1px solid rgba(44,36,24,.2); color: var(--ink-soft); }
+  .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-1px); }
+
+  /* —— SHARED SECTION —— */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 64px;
+  }
+
+  .section-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 36px;
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* —— SNAPSHOT —— */
+  .snapshot-wrap { background: var(--terra-pale); }
+
+  .snapshot-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .snapshot-text {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  .strength-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .strength-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgba(194,113,79,.15);
+    font-size: 13px;
+    color: var(--ink-soft);
+    transition: transform .15s;
+  }
+  .strength-item:hover { transform: translateX(4px); }
+  .strength-item::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    flex-shrink: 0;
+  }
+
+  /* —— EXPERIENCE —— */
+  .experience-wrap { background: var(--sage-light); }
+
+  .experience-wrap .section-title em { color: var(--sage); }
+  .experience-wrap .section-eyebrow { color: var(--sage); }
+
+  .timeline { display: flex; flex-direction: column; gap: 32px; }
+
+  .timeline-item {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    border: 1px solid rgba(138,158,133,.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .timeline-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(44,36,24,.07);
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--sage);
+    border-radius: 3px 0 0 3px;
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .timeline-company {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .timeline-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-top: 2px;
+  }
+
+  .timeline-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .timeline-bullets li {
+    display: flex;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .timeline-bullets li::before {
+    content: '—';
+    color: var(--sage);
+    flex-shrink: 0;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* —— EDUCATION & CERTS —— */
+  .edu-wrap { background: var(--mauve-light); }
+
+  .edu-wrap .section-title em { color: var(--mauve); }
+  .edu-wrap .section-eyebrow { color: var(--mauve); }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .edu-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid rgba(158,126,138,.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s;
+  }
+  .edu-card:hover { transform: translateY(-2px); }
+  .edu-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--mauve);
+    border-radius: 3px 0 0 3px;
+  }
+
+  .edu-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-bottom: 8px;
+  }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .edu-school {
+    font-size: 13px;
+    color: var(--ink-soft);
+    opacity: .7;
+  }
+
+  .cert-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .cert-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 30px;
+    border: 1px solid rgba(158,126,138,.25);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: .06em;
+  }
+  .cert-chip::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--mauve);
+    flex-shrink: 0;
+  }
+
+  /* —— CLOSING —— */
+  .closing-wrap { background: var(--warm-white); }
+
+  .closing-inner {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .closing-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+  }
+  .closing-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .closing-text {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+  .closing-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  /* —— FOOTER —— */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.35);
+    text-align: center;
+    padding: 32px 48px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .08em;
+  }
+  footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+  footer a:hover { color: white; }
+
+  @media(max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero, .section { padding: 120px 28px 56px; }
+    .snapshot-grid, .edu-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- —— NAV —— -->
+<nav>
+  <a href="https://kamriwilliams.com" class="nav-name">Kamri Williams</a>
+  <div class="nav-links">
+    <a href="https://kamriwilliams.com">Home</a>
+    <a href="https://kamriwilliams.com/resume/" class="active">Resume</a>
+    <a href="https://kamriwilliams.com/projects/">Projects</a>
+    <a href="https://kamriwilliams.com/about/">About</a>
+    <a href="https://kamriwilliams.com/contact/">Contact</a>
+  </div>
+</nav>
+
+<!-- —— HERO —— -->
+<section class="hero">
+  <div class="hero-eyebrow">experience & credentials</div>
+  <h1>My <em>Resume</em></h1>
+  <p class="hero-sub">
+    Technical professional with a background in application support, data analysis, and machine learning. Currently pursuing an M.S. in Data Science.
+  </p>
+  <a href="./Kamri_Williams_Resume.pdf" download class="btn-primary">
+    <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l-5-5h3V4h4v7h3l-5 5zm-7 4v-2h14v2H5z"/></svg>
+    Download PDF
+  </a>
+</section>
+
+<!-- —— SNAPSHOT —— -->
+<div class="snapshot-wrap">
+  <section class="section">
+    <div class="section-eyebrow">who I am</div>
+    <div class="section-title">Professional <em>Snapshot</em></div>
+    <div class="snapshot-grid">
+      <p class="snapshot-text">
+        Technical professional with experience solving production issues, analyzing system behavior, improving workflows, and communicating technical findings to business stakeholders. Currently pursuing an M.S. in Data Science with growing expertise in analytics, machine learning, and AI.
+      </p>
+      <div class="strength-list">
+        <div class="strength-item">Python, SQL, Pandas</div>
+        <div class="strength-item">Machine Learning</div>
+        <div class="strength-item">Data Cleaning & Analysis</div>
+        <div class="strength-item">Root Cause Analysis</div>
+        <div class="strength-item">Dashboarding & Reporting</div>
+        <div class="strength-item">APIs & Systems Troubleshooting</div>
+        <div class="strength-item">Cross-Functional Collaboration</div>
+        <div class="strength-item">Process Improvement</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— EXPERIENCE —— -->
+<div class="experience-wrap">
+  <section class="section">
+    <div class="section-eyebrow">where I've worked</div>
+    <div class="section-title">Experience <em>Highlights</em></div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">Q2 Software</div>
+            <div class="timeline-role">Application Support Engineer</div>
+          </div>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Support 20+ financial institutions in production environments</li>
+          <li>Analyze logs and platform behavior to identify root causes</li>
+          <li>Improve onboarding documentation used by 300+ institutions</li>
+          <li>Translate technical issues into clear business language</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">Wipro</div>
+            <div class="timeline-role">Project Engineer</div>
+          </div>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Testing and validation for Meta platforms</li>
+          <li>Debugged code and analyzed performance issues</li>
+          <li>Improved testing operations and scheduling efficiency</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-company">CapMetro</div>
+            <div class="timeline-role">IT Service Desk Analyst</div>
+          </div>
+        </div>
+        <ul class="timeline-bullets">
+          <li>Resolved enterprise technical issues across the organization</li>
+          <li>Tracked trends and recurring incidents to support proactive resolution</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- —— EDUCATION & CERTS —— -->
+<div class="edu-wrap">
+  <section class="section">
+    <div class="section-eyebrow">credentials</div>
+    <div class="section-title">Education &<br><em>Certifications</em></div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-label">In Progress</div>
+        <div class="edu-degree">M.S. Data Science</div>
+        <div class="edu-school">Western Governors University</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-label">Completed</div>
+        <div class="edu-degree">B.S. Data Management & Analytics</div>
+        <div class="edu-school">Western Governors University</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-label">Completed · 2021</div>
+        <div class="edu-degree">A.A.S. Network Administration</div>
+        <div class="edu-school">Austin Community College</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-label">Completed · 2021</div>
+        <div class="edu-degree">A.A.S. Security Administration</div>
+        <div class="edu-school">Austin Community College</div>
+      </div>
+    </div>
+    <div class="cert-row">
+      <div class="cert-chip">Udacity — Data Analysis Nanodegree</div>
+      <div class="cert-chip">CompTIA A+</div>
+      <div class="cert-chip">CompTIA Network+</div>
+      <div class="cert-chip">CompTIA Project+</div>
+    </div>
+  </section>
+</div>
+
+<!-- —— CLOSING —— -->
+<div class="closing-wrap">
+  <section class="section">
+    <div class="closing-inner">
+      <div class="closing-eyebrow">let's talk</div>
+      <div class="closing-title">Let's Connect</div>
+      <p class="closing-text">Open to remote & light hybrid opportunities. If my background fits what you're looking for, I'd love to hear from you.</p>
+      <div class="closing-links">
+        <a href="https://www.linkedin.com/in/kws1/" class="btn-primary">LinkedIn</a>
+        <a href="https://github.com/kamriwilliams" class="btn-secondary">GitHub</a>
+        <a href="https://kamriwilliams.com/contact/" class="btn-secondary">Contact</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— FOOTER —— -->
+<footer>
+  Kamri Williams &nbsp;·&nbsp; Data Scientist &nbsp;·&nbsp;
+  <a href="https://github.com/kamriwilliams">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/kws1/">LinkedIn</a>
+</footer>
+
+</body>
+</html>
