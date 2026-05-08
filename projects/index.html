@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Projects | Kamri Williams</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:     #f7f2ea;
+    --parchment: #ede6d6;
+    --warm-white:#faf7f2;
+    --ink:       #2c2418;
+    --ink-soft:  #5a4f42;
+    --terracotta:#c2714f;
+    --terra-light:#e8c4b0;
+    --terra-pale: #f5e8e0;
+    --sage:      #8a9e85;
+    --sage-light:#d4e0d2;
+    --mauve:     #9e7e8a;
+    --mauve-light:#e8d8de;
+    --rule:      rgba(44,36,24,.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* —— NAV —— */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(247,242,234,.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: .02em;
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--terracotta); }
+
+  /* —— HERO —— */
+  .hero {
+    padding: 140px 64px 72px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 100px; left: 30px;
+    width: 80px; height: 80px;
+    border-top: 2px solid var(--terracotta);
+    border-left: 2px solid var(--terracotta);
+    opacity: .3;
+    border-radius: 4px 0 0 0;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 600;
+    line-height: 1.0;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 440px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .hero-note {
+    margin-top: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--ink-soft);
+  }
+  .hero-note::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--terracotta);
+    opacity: .5;
+  }
+
+  /* —— PROJECT CARDS —— */
+  .project {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 64px;
+    position: relative;
+  }
+
+  .project-wrap { position: relative; }
+  .moms-wrap     { background: var(--terra-pale); }
+  .heart-wrap    { background: var(--sage-light); }
+  .employee-wrap { background: var(--mauve-light); }
+
+  .project-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--terracotta);
+    opacity: .12;
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    font-style: italic;
+  }
+
+  .project-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+  }
+  .project-tag::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .project-title em { font-style: italic; color: var(--terracotta); }
+
+  .project-subtitle {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: .6;
+    margin-bottom: 28px;
+  }
+
+  .project-body {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .project-desc {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+
+  .tool-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+  .tool {
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .06em;
+    border: 1px solid rgba(44,36,24,.15);
+    color: var(--ink-soft);
+    background: rgba(255,255,255,.5);
+  }
+
+  .project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--terracotta);
+    color: white;
+    padding: 13px 26px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+  }
+  .project-btn:hover { background: var(--ink); transform: translateY(-1px); }
+  .project-btn svg { width: 15px; height: 15px; }
+
+  .stats-stack { display: flex; flex-direction: column; gap: 14px; }
+
+  .stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px 22px;
+    border: 1px solid rgba(194,113,79,.15);
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .stat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(44,36,24,.08); }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--terracotta);
+    border-radius: 3px 0 0 3px;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: .5;
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-note { font-size: 12px; color: var(--ink-soft); opacity: .55; line-height: 1.5; }
+
+  .persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+  .persona-chip {
+    background: var(--terra-pale);
+    border: 1px solid var(--terra-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .persona-chip strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .04em;
+  }
+
+  /* Heart wrap overrides */
+  .heart-wrap .stat-card::before { background: var(--sage); }
+  .heart-wrap .project-btn { background: var(--sage); }
+  .heart-wrap .project-btn:hover { background: var(--ink); }
+  .heart-wrap .project-tag { color: var(--sage); }
+  .heart-wrap .project-tag::before { background: var(--sage); }
+  .heart-wrap .project-title em { color: var(--sage); }
+  .heart-wrap .stat-card { border-color: rgba(138,158,133,.2); }
+  .heart-wrap .tool { border-color: rgba(138,158,133,.25); }
+
+  .did-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .did-list li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .did-list li .check {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--sage);
+    flex-shrink: 0;
+    margin-top: -2px;
+  }
+
+  /* Employee wrap overrides */
+  .employee-wrap .stat-card::before { background: var(--mauve); }
+  .employee-wrap .project-btn { background: var(--mauve); }
+  .employee-wrap .project-btn:hover { background: var(--ink); }
+  .employee-wrap .project-tag { color: var(--mauve); }
+  .employee-wrap .project-tag::before { background: var(--mauve); }
+  .employee-wrap .project-title em { color: var(--mauve); }
+  .employee-wrap .stat-card { border-color: rgba(158,126,138,.2); }
+  .employee-wrap .tool { border-color: rgba(158,126,138,.25); }
+
+  .data-table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(158,126,138,.2);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  .table-header {
+    background: var(--ink);
+    color: rgba(255,255,255,.6);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 10px 18px;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 10px 18px;
+    border-bottom: 1px solid rgba(158,126,138,.1);
+    align-items: center;
+    transition: background .15s;
+  }
+  .table-row:last-child { border-bottom: none; }
+  .table-row:hover { background: #faf8fb; }
+  .cell { color: var(--ink-soft); }
+  .cell.bad { color: #c0392b; text-decoration: line-through; opacity: .6; }
+  .cell.good { color: #27ae60; }
+  .cell.fixed { display: flex; align-items: center; gap: 6px; color: #27ae60; }
+  .badge { font-size: 9px; background: #eafaf1; color: #27ae60; padding: 2px 6px; border-radius: 3px; letter-spacing: .04em; }
+  .badge.dup { background: #fdf2f8; color: var(--mauve); }
+
+  .cleaning-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cleaning-chip {
+    background: white;
+    border: 1px solid rgba(158,126,138,.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .cleaning-chip .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--mauve);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .cleaning-chip .lbl { font-size: 11px; color: var(--ink-soft); opacity: .55; line-height: 1.4; }
+
+  /* —— CLOSING —— */
+  .closing {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 64px 100px;
+    text-align: center;
+    background: var(--warm-white);
+  }
+  .closing-note { font-family: 'Caveat', cursive; font-size: 22px; color: var(--terracotta); margin-bottom: 12px; }
+  .closing h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-style: italic; color: var(--ink); margin-bottom: 16px; }
+  .closing p { font-size: 15px; color: var(--ink-soft); max-width: 420px; margin: 0 auto 32px; line-height: 1.75; }
+  .closing-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .closing-link { padding: 12px 28px; border-radius: 30px; font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: .06em; transition: transform .2s; }
+  .closing-link:hover { transform: translateY(-1px); }
+  .closing-link.primary { background: var(--terracotta); color: white; }
+  .closing-link.secondary { border: 1px solid rgba(44,36,24,.2); color: var(--ink-soft); }
+
+  /* —— FOOTER —— */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.35);
+    text-align: center;
+    padding: 32px 48px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .08em;
+  }
+  footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+  footer a:hover { color: white; }
+
+  @media(max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero, .project { padding: 120px 28px 56px; }
+    .project-body { grid-template-columns: 1fr; gap: 40px; }
+    .project-number { display: none; }
+    .closing { padding: 56px 28px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://kamriwilliams.com" class="nav-name">Kamri Williams</a>
+  <div class="nav-links">
+    <a href="https://kamriwilliams.com">Home</a>
+    <a href="https://kamriwilliams.com/resume/">Resume</a>
+    <a href="https://kamriwilliams.com/projects/" class="active">Projects</a>
+    <a href="https://kamriwilliams.com/about/">About</a>
+    <a href="https://kamriwilliams.com/contact/">Contact</a>
+  </div>
+</nav>
+
+<!-- —— HERO —— -->
+<section class="hero">
+  <div class="hero-eyebrow">a collection of work I'm proud of</div>
+  <h1>Projects &<br><em>Stories</em></h1>
+  <p class="hero-sub">Real data, real problems, real people. Every project here started with a question I actually wanted answered.</p>
+  <div class="hero-note">three projects · end-to-end · built from scratch</div>
+</section>
+
+<!-- PROJECT 1: AI MOMS -->
+<div class="project-wrap moms-wrap">
+  <section class="project">
+    <div class="project-number">01</div>
+    <div class="project-tag">Featured Project</div>
+    <div class="project-title">How Moms<br><em>Use AI</em></div>
+    <div class="project-subtitle">Behavioral Segmentation · NLP · Persona Classification</div>
+    <div class="project-body">
+      <div>
+        <p class="project-desc">
+          AI tools are everywhere, but not everyone is using them the same way — or at all. I wanted to understand how moms specifically engage with AI in their real lives. So I went and asked them. Fifty-two real survey responses later, I built an end-to-end machine learning pipeline that turns messy, unstructured text into a behavior-based persona framework that can actually predict who someone is.
+        </p>
+        <p class="project-desc">
+          This one is personal. As the founder of Melanated Mamas Golden Crescent, I know firsthand that the tools we build should reflect the people using them. This project is my attempt to do that with data.
+        </p>
+        <div class="tool-row">
+          <span class="tool">Python</span>
+          <span class="tool">scikit-learn</span>
+          <span class="tool">TF-IDF</span>
+          <span class="tool">KMeans</span>
+          <span class="tool">Random Forest</span>
+          <span class="tool">NLP</span>
+          <span class="tool">Pandas</span>
+          <span class="tool">Seaborn</span>
+        </div>
+        <a href="https://github.com/KamriWilliams/How_Moms_Use_Ai/tree/main" target="_blank" class="project-btn">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+      <div class="stats-stack">
+        <div class="stat-card">
+          <div class="stat-label">Model Accuracy</div>
+          <div class="stat-value">55%</div>
+          <div class="stat-note">4x better than the 12.5% random chance baseline for 8 classes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Strongest Persona · F1 Score</div>
+          <div class="stat-value">0.86</div>
+          <div class="stat-note">The Routine Queen — precision 75%, recall 100%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Real Responses Collected</div>
+          <div class="stat-value">52</div>
+          <div class="stat-note">Original data gathered directly from mothers</div>
+        </div>
+        <div style="margin-top:4px;">
+          <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);opacity:.4;margin-bottom:10px;">8 Personas Identified</div>
+          <div class="persona-grid">
+            <div class="persona-chip"><strong>CEO Mom</strong>Strategic power user</div>
+            <div class="persona-chip"><strong>Routine Queen</strong>Structure & systems</div>
+            <div class="persona-chip"><strong>Study & Survive</strong>Homework support</div>
+            <div class="persona-chip"><strong>Conscious Creator</strong>Ethics-aware</div>
+            <div class="persona-chip"><strong>Organized Chaos</strong>Mental load</div>
+            <div class="persona-chip"><strong>AI Curious</strong>Growing confidence</div>
+            <div class="persona-chip"><strong>Curious but Stuck</strong>Needs onboarding</div>
+            <div class="persona-chip"><strong>Not for Me</strong>Skeptical</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PROJECT 2: HEART DISEASE -->
+<div class="project-wrap heart-wrap">
+  <section class="project">
+    <div class="project-number">02</div>
+    <div class="project-tag">Classification Model</div>
+    <div class="project-title">Heart Disease<br><em>Prediction</em></div>
+    <div class="project-subtitle">Predictive Analytics · Logistic Regression · Model Evaluation</div>
+    <div class="project-body">
+      <div>
+        <p class="project-desc">
+          Healthcare data holds patterns that matter. This project builds a classification model to predict heart disease risk from patient health indicators — cleaning the data, exploring variable relationships, training the model, and evaluating performance with real metrics.
+        </p>
+        <div class="tool-row">
+          <span class="tool">Python</span>
+          <span class="tool">Logistic Regression</span>
+          <span class="tool">scikit-learn</span>
+          <span class="tool">Pandas</span>
+          <span class="tool">Data Visualization</span>
+        </div>
+        <a href="#" class="project-btn">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+      <div>
+        <div class="stats-stack">
+          <div class="stat-card">
+            <div class="stat-label">Model Type</div>
+            <div class="stat-value" style="font-size:24px;font-family:'DM Sans',sans-serif;font-weight:500;">Logistic Regression</div>
+            <div class="stat-note">Binary classification — predicts heart disease risk</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Evaluation Method</div>
+            <div class="stat-value" style="font-size:20px;font-family:'DM Sans',sans-serif;font-weight:500;">Accuracy + Confusion Matrix</div>
+            <div class="stat-note">Full performance breakdown across true/false positives and negatives</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <ul class="did-list">
+            <li><span class="check">✓</span>Cleaned and prepared patient health data for modeling</li>
+            <li><span class="check">✓</span>Explored variable relationships through EDA</li>
+            <li><span class="check">✓</span>Built binary classifier to predict heart disease risk</li>
+            <li><span class="check">✓</span>Evaluated model performance with accuracy metrics and confusion matrix</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PROJECT 3: EMPLOYEE DATA -->
+<div class="project-wrap employee-wrap">
+  <section class="project">
+    <div class="project-number">03</div>
+    <div class="project-tag">Data Quality</div>
+    <div class="project-title">Employee Data<br><em>Cleaning</em></div>
+    <div class="project-subtitle">Validation · Standardization · Quality Control</div>
+    <div class="project-body">
+      <div>
+        <p class="project-desc">
+          Bad data is a business problem, not just a technical one. This project takes a messy employee dataset full of duplicates, missing values, invalid salaries, and inconsistent formatting — and turns it into something clean, reliable, and ready for analysis.
+        </p>
+        <div class="tool-row">
+          <span class="tool">Python</span>
+          <span class="tool">Pandas</span>
+          <span class="tool">Data Cleaning</span>
+          <span class="tool">Data Validation</span>
+        </div>
+        <a href="#" class="project-btn">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+      <div>
+        <div class="data-table">
+          <div class="table-header">
+            <span>Employee</span><span>Salary</span><span>Dept</span><span>Status</span>
+          </div>
+          <div class="table-row">
+            <span class="cell">J. Martinez</span>
+            <span class="cell bad">-$4,200</span>
+            <span class="cell good">HR</span>
+            <span class="cell fixed">Active <span class="badge">FIXED</span></span>
+          </div>
+          <div class="table-row">
+            <span class="cell bad">NULL</span>
+            <span class="cell">$67,000</span>
+            <span class="cell bad">N/A</span>
+            <span class="cell fixed">Full-Time <span class="badge">FIXED</span></span>
+          </div>
+          <div class="table-row">
+            <span class="cell good">T. Johnson</span>
+            <span class="cell good">$72,500</span>
+            <span class="cell good">Engineering</span>
+            <span class="cell good">Active ✓</span>
+          </div>
+          <div class="table-row">
+            <span class="cell bad">T. Johnson</span>
+            <span class="cell bad">$72,500</span>
+            <span class="cell bad">Engineering</span>
+            <span class="cell fixed">Removed <span class="badge dup">DUP</span></span>
+          </div>
+          <div class="table-row">
+            <span class="cell">A. Chen</span>
+            <span class="cell bad">$999,999</span>
+            <span class="cell good">Finance</span>
+            <span class="cell fixed">$69,000 <span class="badge">FIXED</span></span>
+          </div>
+        </div>
+        <div class="cleaning-chips">
+          <div class="cleaning-chip"><div class="num">4</div><div class="lbl">Issue types identified and resolved</div></div>
+          <div class="cleaning-chip"><div class="num">0</div><div class="lbl">Duplicate records remaining</div></div>
+          <div class="cleaning-chip"><div class="num">100%</div><div class="lbl">Dataset ready for analysis</div></div>
+          <div class="cleaning-chip"><div class="num">✓</div><div class="lbl">Salaries, nulls & fields standardized</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— CLOSING —— -->
+<div class="closing">
+  <div class="closing-note">and there's more on the way</div>
+  <h2>Let's Connect</h2>
+  <p>I'm always building something new. If you want to talk data, career, or community — I'd love to hear from you.</p>
+  <div class="closing-links">
+    <a href="https://www.linkedin.com/in/kws1/" class="closing-link primary">LinkedIn</a>
+    <a href="https://github.com/kamriwilliams" class="closing-link secondary">GitHub</a>
+    <a href="https://kamriwilliams.com/contact/" class="closing-link secondary">Contact</a>
+  </div>
+</div>
+
+<footer>
+  Kamri Williams &nbsp;·&nbsp; Data Scientist &nbsp;·&nbsp;
+  <a href="https://github.com/kamriwilliams">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/kws1/">LinkedIn</a>
+</footer>
+
+</body>
+</html>
