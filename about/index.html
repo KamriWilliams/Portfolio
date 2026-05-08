@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About | Kamri Williams</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:      #f7f2ea;
+    --warm-white: #faf7f2;
+    --ink:        #2c2418;
+    --ink-soft:   #5a4f42;
+    --terracotta: #c2714f;
+    --terra-light:#e8c4b0;
+    --terra-pale: #f5e8e0;
+    --sage:       #8a9e85;
+    --sage-light: #d4e0d2;
+    --mauve:      #9e7e8a;
+    --mauve-light:#e8d8de;
+    --rule:       rgba(44,36,24,.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* —— NAV —— */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 102;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(247,242,234,.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: .02em;
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--terracotta); }
+
+  /* —— HERO —— */
+  .hero {
+    padding: 120px 64px 72px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-text { display: flex; flex-direction: column; }
+  .hero-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 24px 56px rgba(44,36,24,.12);
+  }
+  .hero-image img {
+    width: 100%;
+    display: block;
+    border-radius: 24px;
+  }
+  .hero-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 600;
+    line-height: 1.0;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hero h1 em { font-style: italic; color: var(--terracotta); }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 500px;
+    line-height: 1.85;
+  }
+
+  /* —— SHARED —— */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 72px 64px;
+  }
+  .section-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 32px;
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* —— WHY DATA —— */
+  .why-wrap { background: var(--terra-pale); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .why-text p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  .pull-quote {
+    background: white;
+    border-left: 3px solid var(--terracotta);
+    border-radius: 0 14px 14px 0;
+    padding: 24px 28px;
+    margin-top: 8px;
+  }
+  .pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .pull-quote cite {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: var(--terracotta);
+    font-style: normal;
+  }
+
+  /* —— MELANATED MAMAS —— */
+  .mamas-wrap { background: var(--sage-light); }
+  .mamas-wrap .section-eyebrow { color: var(--sage); }
+  .mamas-wrap .section-title em { color: var(--sage); }
+
+  .mamas-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .mamas-text p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+  .mamas-text p:last-child { margin-bottom: 0; }
+
+  .mamas-stat-stack { display: flex; flex-direction: column; gap: 16px; }
+
+  .mamas-stat {
+    background: white;
+    border-radius: 14px;
+    padding: 20px 24px;
+    border: 1px solid rgba(138,158,133,.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .mamas-stat::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--sage);
+    border-radius: 3px 0 0 3px;
+  }
+  .mamas-stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .mamas-stat-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* —— BEYOND —— */
+  .beyond-wrap { background: var(--mauve-light); }
+  .beyond-wrap .section-eyebrow { color: var(--mauve); }
+  .beyond-wrap .section-title em { color: var(--mauve); }
+
+  .fun-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .fun-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid rgba(158,126,138,.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s;
+  }
+  .fun-card:hover { transform: translateY(-3px); }
+  .fun-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--mauve);
+    border-radius: 3px 0 0 3px;
+  }
+  .fun-card-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 14px;
+    font-style: italic;
+    color: var(--mauve);
+    opacity: .3;
+  }
+  .fun-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .fun-card-body {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* —— CLOSING —— */
+  .closing-wrap { background: var(--warm-white); }
+  .closing-inner { text-align: center; max-width: 560px; margin: 0 auto; }
+  .closing-eyebrow { font-family: 'Caveat', cursive; font-size: 20px; color: var(--terracotta); margin-bottom: 12px; }
+  .closing-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 44px); font-weight: 600; font-style: italic; color: var(--ink); margin-bottom: 16px; }
+  .closing-text { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 32px; }
+  .closing-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-decoration: none;
+    transition: transform .2s, background .2s;
+  }
+  .btn-primary { background: var(--terracotta); color: white; }
+  .btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
+  .btn-secondary { border: 1px solid rgba(44,36,24,.2); color: var(--ink-soft); }
+  .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-1px); }
+
+  /* —— HAMBURGER —— */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+    z-index: 101;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all .3s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(247,242,234,.97);
+    z-index: 100;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .mobile-menu a:hover, .mobile-menu a.active { color: var(--terracotta); font-style: italic; }
+
+  /* —— FOOTER —— */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.35);
+    text-align: center;
+    padding: 32px 48px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .08em;
+  }
+  footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+  footer a:hover { color: white; }
+
+  @media(max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero { grid-template-columns: 1fr; padding: 100px 28px 56px; gap: 32px; }
+    .hero-image { order: -1; max-width: 320px; margin: 0 auto; }
+    .section { padding: 56px 28px; }
+    .why-grid, .mamas-grid { grid-template-columns: 1fr; gap: 36px; }
+    .fun-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- —— NAV —— -->
+<nav>
+  <a href="https://kamriwilliams.com" class="nav-name">Kamri Williams</a>
+  <div class="nav-links">
+    <a href="https://kamriwilliams.com">Home</a>
+    <a href="https://kamriwilliams.com/resume/">Resume</a>
+    <a href="https://kamriwilliams.com/projects/">Projects</a>
+    <a href="https://kamriwilliams.com/about/" class="active">About</a>
+    <a href="https://kamriwilliams.com/contact/">Contact</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://kamriwilliams.com">Home</a>
+  <a href="https://kamriwilliams.com/resume/">Resume</a>
+  <a href="https://kamriwilliams.com/projects/">Projects</a>
+  <a href="https://kamriwilliams.com/about/" class="active">About</a>
+  <a href="https://kamriwilliams.com/contact/">Contact</a>
+</div>
+
+<!-- —— HERO —— -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">the person behind the data</div>
+    <h1>Hi, I'm<br><em>Kamri.</em></h1>
+    <p class="hero-sub">Problem solver. Storyteller. Community builder. I'm on a mission to use data to make the world a little more understandable, and a lot more equitable.</p>
+  </div>
+  <div class="hero-image">
+    <img src="/assets/brand_image.png" alt="Kamri Williams - The Data Mama"/>
+  </div>
+</section>
+
+<!-- —— WHY DATA —— -->
+<div class="why-wrap">
+  <section class="section">
+    <div class="section-eyebrow">my why</div>
+    <div class="section-title">Data is just <em>people</em><br>in disguise</div>
+    <div class="why-grid">
+      <div class="why-text">
+        <p>
+          I've always been drawn to research: the process of asking hard questions and actually digging for answers. Data felt like a natural fit because it's one of the most powerful tools we have for understanding the world.
+        </p>
+        <p>
+          But here's what really hooked me: data gets labeled as cold and disconnected from people. I don't see it that way at all. Every dataset is made up of real human decisions, real human experiences, real human lives. Behind every number is a story waiting to be told.
+        </p>
+        <p>
+          I'm a problem solver at my core, and data science is, at its best, about solving the biggest problems we face. That's where I want to be.
+        </p>
+      </div>
+      <div class="pull-quote">
+        <p>"Data seems like it can be disconnected from people. But it is nothing but stories of people behind it."</p>
+        <cite>Kamri Williams</cite>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— MELANATED MAMAS —— -->
+<div class="mamas-wrap">
+  <section class="section">
+    <div class="section-eyebrow">community</div>
+    <div class="section-title">Melanated Mamas<br><em>Golden Crescent</em></div>
+    <div class="mamas-grid">
+      <div class="mamas-text">
+        <p>
+          I started Melanated Mamas Golden Crescent the same way I approach most things: I saw a need and I stepped up to meet it.
+        </p>
+        <p>
+          I needed a community. A safe space. A place where Black mothers in the Golden Crescent could show up fully as themselves, without explanation, without having to shrink. I figured if I needed it, others did too. I was right.
+        </p>
+        <p>
+          Running this nonprofit has deepened how I think about everything in my work. Access matters. Representation matters. The tools we build in tech, in data, in AI should actually reflect and serve the people using them. That belief shows up in every project I take on.
+        </p>
+      </div>
+      <div class="mamas-stat-stack">
+        <div class="mamas-stat">
+          <div class="mamas-stat-value">Community</div>
+          <div class="mamas-stat-label">Built from a personal need and a conviction that others felt the same</div>
+        </div>
+        <div class="mamas-stat">
+          <div class="mamas-stat-value">Golden Crescent</div>
+          <div class="mamas-stat-label">Rooted locally, focused on Black mothers in the region</div>
+        </div>
+        <div class="mamas-stat">
+          <div class="mamas-stat-value">Founder</div>
+          <div class="mamas-stat-label">Led by Kamri, because someone had to go first</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— BEYOND THE WORK —— -->
+<div class="beyond-wrap">
+  <section class="section">
+    <div class="section-eyebrow">off the clock</div>
+    <div class="section-title">What makes<br>me <em>me</em></div>
+    <div class="fun-grid">
+      <div class="fun-card">
+        <div class="fun-card-icon">∞</div>
+        <div class="fun-card-title">Sci-Fi Reader</div>
+        <div class="fun-card-body">Sci-fi is my favorite genre. There's something about imagining futures that don't exist yet that feels a lot like data science.</div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-icon">✦</div>
+        <div class="fun-card-title">Marvel Fanatic</div>
+        <div class="fun-card-body">Full MCU devotee. I love the storytelling, the world-building, the characters who use their abilities to protect people.</div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-card-icon">◎</div>
+        <div class="fun-card-title">Always Researching</div>
+        <div class="fun-card-body">Whether it's for a project, a book, or just something I got curious about at 11pm, I love to dig. Research isn't just something I do for work. It's just how I'm wired.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— CLOSING —— -->
+<div class="closing-wrap">
+  <section class="section">
+    <div class="closing-inner">
+      <div class="closing-eyebrow">let's build something</div>
+      <div class="closing-title">Now you know me.<br>Let's connect.</div>
+      <p class="closing-text">I'm actively looking for my next opportunity in data. If something here resonated, I'd love to talk.</p>
+      <div class="closing-links">
+        <a href="https://kamriwilliams.com/contact/" class="btn-primary">Get in Touch</a>
+        <a href="https://kamriwilliams.com/projects/" class="btn-secondary">See My Work</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— FOOTER —— -->
+<footer>
+  Kamri Williams &nbsp;·&nbsp; Data Scientist &nbsp;·&nbsp;
+  <a href="https://github.com/kamriwilliams">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/kws1/">LinkedIn</a>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
