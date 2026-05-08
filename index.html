@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kamri Williams | Data Science & AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Caveat:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream:      #f7f2ea;
+    --warm-white: #faf7f2;
+    --ink:        #2c2418;
+    --ink-soft:   #5a4f42;
+    --terracotta: #c2714f;
+    --terra-light:#e8c4b0;
+    --terra-pale: #f5e8e0;
+    --sage:       #8a9e85;
+    --sage-light: #d4e0d2;
+    --mauve:      #9e7e8a;
+    --mauve-light:#e8d8de;
+    --rule:       rgba(44,36,24,.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* —— NAV —— */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 48px;
+    background: rgba(247,242,234,.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: .02em;
+  }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--terracotta); }
+
+  /* —— HERO —— */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 64px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 120px; left: 30px;
+    width: 80px; height: 80px;
+    border-top: 2px solid var(--terracotta);
+    border-left: 2px solid var(--terracotta);
+    opacity: .25;
+    border-radius: 4px 0 0 0;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 60px; right: 30px;
+    width: 60px; height: 60px;
+    border-bottom: 2px solid var(--terracotta);
+    border-right: 2px solid var(--terracotta);
+    opacity: .15;
+    border-radius: 0 0 4px 0;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+    transform: rotate(-1deg);
+    display: inline-block;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 9vw, 104px);
+    font-weight: 600;
+    line-height: 1.0;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-bio {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 480px;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 36px;
+  }
+
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-decoration: none;
+    transition: transform .2s, background .2s;
+  }
+  .btn-primary { background: var(--terracotta); color: white; }
+  .btn-primary:hover { background: var(--ink); transform: translateY(-1px); }
+  .btn-secondary { border: 1px solid rgba(44,36,24,.2); color: var(--ink-soft); }
+  .btn-secondary:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-1px); }
+
+  .hero-note {
+    margin-top: 48px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Caveat', cursive;
+    font-size: 15px;
+    color: var(--ink-soft);
+    opacity: .6;
+  }
+  .hero-note::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--terracotta);
+    opacity: .5;
+  }
+
+  /* —— SECTION WRAPPER —— */
+  .section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 64px;
+  }
+
+  .section-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 16px;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 40px;
+    line-height: 1.1;
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* —— WHAT I DO —— */
+  .what-wrap { background: var(--terra-pale); }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid rgba(194,113,79,.15);
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(44,36,24,.07);
+  }
+  .info-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--terracotta);
+    border-radius: 3px 0 0 3px;
+  }
+
+  .card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--terracotta);
+    opacity: .15;
+    line-height: 1;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .card-body {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  /* —— FEATURED PROJECTS —— */
+  .projects-wrap { background: var(--sage-light); }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .project-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    border: 1px solid rgba(138,158,133,.2);
+    position: relative;
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(44,36,24,.07);
+  }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--sage);
+    border-radius: 3px 0 0 3px;
+  }
+
+  .project-card-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+
+  .project-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .project-card-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .tool-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .tool-chip {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .05em;
+    border: 1px solid rgba(138,158,133,.3);
+    color: var(--ink-soft);
+    background: rgba(255,255,255,.6);
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .06em;
+    color: var(--sage);
+    text-decoration: none;
+    transition: color .2s, gap .2s;
+  }
+  .card-link:hover { color: var(--ink); gap: 10px; }
+
+  /* —— FOCUS —— */
+  .focus-wrap { background: var(--mauve-light); }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .focus-text {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  .focus-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 8px;
+  }
+
+  .focus-chip {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: .07em;
+    border: 1px solid rgba(158,126,138,.3);
+    color: var(--ink-soft);
+    background: white;
+  }
+
+  /* —— BEYOND DATA —— */
+  .beyond-wrap { background: var(--warm-white); }
+
+  .beyond-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .beyond-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    opacity: .7;
+    margin-bottom: 10px;
+  }
+
+  .beyond-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .beyond-heading em { font-style: italic; color: var(--terracotta); }
+
+  .beyond-text {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+  }
+
+  .beyond-note {
+    margin-top: 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 17px;
+    color: var(--terracotta);
+  }
+
+  /* —— CLOSING —— */
+  .closing-wrap { background: var(--cream); }
+
+  .closing-inner {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .closing-eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+  }
+
+  .closing-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .closing-text {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 36px;
+  }
+
+  .closing-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+  /* —— FOOTER —— */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,.35);
+    text-align: center;
+    padding: 32px 48px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .08em;
+  }
+  footer a { color: rgba(255,255,255,.5); text-decoration: none; }
+  footer a:hover { color: white; }
+
+  /* —— RESPONSIVE —— */
+  @media(max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 120px 28px 64px; min-height: auto; }
+    .section { padding: 56px 28px; }
+    .three-col, .project-grid { grid-template-columns: 1fr; }
+    .focus-grid, .beyond-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- —— NAV —— -->
+<nav>
+  <a href="/" class="nav-name">Kamri Williams</a>
+  <div class="nav-links">
+    <a href="/" class="active">Home</a>
+    <a href="/resume/">Resume</a>
+    <a href="/projects/">Projects</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </div>
+</nav>
+
+<!-- —— HERO —— -->
+<section class="hero">
+  <div class="hero-eyebrow">engineer · analyst · builder</div>
+  <h1>Turning <em>Data</em><br>Into Decisions</h1>
+  <p class="hero-bio">
+    I'm Kamri Williams — an Application Support Engineer and data science graduate student building solutions at the intersection of technical support, analytics, AI, and real-world problem solving.
+  </p>
+  <div class="hero-btns">
+    <a href="/projects/" class="btn-primary">View Projects</a>
+    <a href="/resume/" class="btn-secondary">View Resume</a>
+  </div>
+  <div class="hero-note">open to opportunities · based in the Golden Crescent</div>
+</section>
+
+<!-- —— WHAT I DO —— -->
+<div class="what-wrap">
+  <section class="section">
+    <div class="section-eyebrow">what I do</div>
+    <div class="section-title">Where I <em>Show Up</em></div>
+    <div class="three-col">
+      <div class="info-card">
+        <div class="card-num">01</div>
+        <div class="card-title">Technical Problem Solving</div>
+        <div class="card-body">I investigate production issues, analyze system behavior, and translate technical findings into clear next steps.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-num">02</div>
+        <div class="card-title">Data & Analytics</div>
+        <div class="card-body">I use Python, SQL, data cleaning, EDA, and machine learning to turn messy information into useful insights.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-num">03</div>
+        <div class="card-title">Practical Impact</div>
+        <div class="card-body">I care about building solutions that help teams, customers, and communities make better decisions.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— FEATURED PROJECTS —— -->
+<div class="projects-wrap">
+  <section class="section">
+    <div class="section-eyebrow">selected work</div>
+    <div class="section-title">Featured <em>Projects</em></div>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-card-tag">NLP · Clustering · In Progress</div>
+        <div class="project-card-title">AI Personas for Moms</div>
+        <p class="project-card-desc">Used survey data, clustering, and NLP to identify behavioral patterns in how mothers think about and use AI tools.</p>
+        <div class="tool-chips">
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">Scikit-learn</span>
+          <span class="tool-chip">NLP</span>
+        </div>
+        <a href="/projects/" class="card-link">View Project →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-card-tag">Machine Learning · Completed</div>
+        <div class="project-card-title">Heart Disease Prediction</div>
+        <p class="project-card-desc">Built a classification model to predict heart disease risk and evaluate performance using health indicator data.</p>
+        <div class="tool-chips">
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">Logistic Regression</span>
+          <span class="tool-chip">Scikit-learn</span>
+        </div>
+        <a href="/projects/" class="card-link">View Project →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-card-tag">Data Quality · Completed</div>
+        <div class="project-card-title">Employee Data Cleaning</div>
+        <p class="project-card-desc">Identified and corrected data quality issues in an employee dataset — duplicates, nulls, invalid salaries, and inconsistent fields.</p>
+        <div class="tool-chips">
+          <span class="tool-chip">Python</span>
+          <span class="tool-chip">Pandas</span>
+          <span class="tool-chip">Data Validation</span>
+        </div>
+        <a href="/projects/" class="card-link">View Project →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— MY FOCUS —— -->
+<div class="focus-wrap">
+  <section class="section">
+    <div class="section-eyebrow">interests</div>
+    <div class="section-title">What I'm <em>Building Toward</em></div>
+    <div class="focus-grid">
+      <p class="focus-text">
+        I'm especially interested in data science, fraud analytics, AI, operational efficiency, and technical solutions that make complex problems easier to understand and act on.
+      </p>
+      <div class="focus-chips">
+        <span class="focus-chip">Data Science</span>
+        <span class="focus-chip">Fraud Analytics</span>
+        <span class="focus-chip">Artificial Intelligence</span>
+        <span class="focus-chip">Operational Efficiency</span>
+        <span class="focus-chip">Machine Learning</span>
+        <span class="focus-chip">NLP</span>
+        <span class="focus-chip">Technical Support</span>
+        <span class="focus-chip">Analytics Engineering</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— BEYOND THE DATA —— -->
+<div class="beyond-wrap">
+  <section class="section">
+    <div class="beyond-inner">
+      <div>
+        <div class="beyond-label">beyond the data</div>
+        <div class="beyond-heading">Melanated<br>Mamas<br><em>Golden Crescent</em></div>
+      </div>
+      <div>
+        <p class="beyond-text">
+          Outside of tech, I'm the founder of Melanated Mamas Golden Crescent — a nonprofit created to support and empower Black mothers throughout the Golden Crescent region. That work shapes how I think about access, impact, and building tools that are actually useful to real people.
+        </p>
+        <div class="beyond-note">community first, always.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— CLOSING —— -->
+<div class="closing-wrap">
+  <section class="section">
+    <div class="closing-inner">
+      <div class="closing-eyebrow">let's talk</div>
+      <div class="closing-title">Let's Connect</div>
+      <p class="closing-text">I'm always building something new. If you want to talk data, career, or community — I'd love to hear from you.</p>
+      <div class="closing-links">
+        <a href="https://github.com/kamriwilliams" class="btn-primary">GitHub</a>
+        <a href="/resume/" class="btn-secondary">Resume</a>
+        <a href="https://www.linkedin.com/in/kws1/" class="btn-secondary">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- —— FOOTER —— */
+<footer>
+  Kamri Williams &nbsp;·&nbsp; Data Scientist &nbsp;·&nbsp;
+  <a href="https://github.com/kamriwilliams">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/kws1/">LinkedIn</a>
+</footer>
+
+</body>
+</html>
