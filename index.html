@@ -245,6 +245,18 @@
     line-height: 1.75;
   }
 
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--terra-pale);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .card-icon svg { width: 22px; height: 22px; stroke: var(--terracotta); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
   /* —— FEATURED PROJECTS —— */
   .projects-wrap { background: var(--sage-light); }
 
@@ -328,6 +340,37 @@
     transition: color .2s, gap .2s;
   }
   .card-link:hover { color: var(--ink); gap: 10px; }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .project-card-tag { margin-bottom: 0; }
+  .status-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .08em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .status-in-progress { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .status-completed { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+
+  .card-img-slot {
+    width: 100%;
+    height: 155px;
+    background: var(--sage-light);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .card-img-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* —— FOCUS —— */
   .focus-wrap { background: var(--mauve-light); }
@@ -539,7 +582,7 @@
   <div class="hero-eyebrow">engineer · analyst · builder</div>
   <h1>Turning <em>Data</em><br>Into Decisions</h1>
   <p class="hero-bio">
-    I'm Kamri Williams — an Application Support Engineer and data science graduate student building solutions at the intersection of technical support, analytics, AI, and real-world problem solving.
+    I'm Kamri Williams — a data scientist and AI builder who turns messy, real-world problems into solutions that actually work.
   </p>
   <div class="hero-btns">
     <a href="/projects/" class="btn-primary">View Projects</a>
@@ -555,19 +598,25 @@
     <div class="section-title">Where I <em>Show Up</em></div>
     <div class="three-col">
       <div class="info-card">
-        <div class="card-num">01</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
         <div class="card-title">Technical Problem Solving</div>
-        <div class="card-body">I investigate production issues, analyze system behavior, and translate technical findings into clear next steps.</div>
+        <div class="card-body">From production issues to root cause — I dig in, find answers, and make the fix legible.</div>
       </div>
       <div class="info-card">
-        <div class="card-num">02</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+        </div>
         <div class="card-title">Data & Analytics</div>
-        <div class="card-body">I use Python, SQL, data cleaning, EDA, and machine learning to turn messy information into useful insights.</div>
+        <div class="card-body">Python, SQL, and ML to turn messy data into something you can actually act on.</div>
       </div>
       <div class="info-card">
-        <div class="card-num">03</div>
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
         <div class="card-title">Practical Impact</div>
-        <div class="card-body">I care about building solutions that help teams, customers, and communities make better decisions.</div>
+        <div class="card-body">Building for teams, customers, and communities — not just dashboards that get ignored.</div>
       </div>
     </div>
   </section>
@@ -580,7 +629,13 @@
     <div class="section-title">Featured <em>Projects</em></div>
     <div class="project-grid">
       <div class="project-card">
-        <div class="project-card-tag">NLP · Clustering · In Progress</div>
+        <div class="card-img-slot">
+          <img src="/assets/how_moms_use_ai.png" alt="Persona clustering output">
+        </div>
+        <div class="card-meta">
+          <span class="project-card-tag">NLP · Clustering</span>
+          <span class="status-badge status-in-progress">In Progress</span>
+        </div>
         <div class="project-card-title">AI Personas for Moms</div>
         <p class="project-card-desc">Used survey data, clustering, and NLP to identify behavioral patterns in how mothers think about and use AI tools.</p>
         <div class="tool-chips">
@@ -591,7 +646,10 @@
         <a href="/projects/" class="card-link">View Project →</a>
       </div>
       <div class="project-card">
-        <div class="project-card-tag">Machine Learning · Completed</div>
+        <div class="card-meta">
+          <span class="project-card-tag">Machine Learning</span>
+          <span class="status-badge status-completed">Completed</span>
+        </div>
         <div class="project-card-title">Heart Disease Prediction</div>
         <p class="project-card-desc">Built a classification model to predict heart disease risk and evaluate performance using health indicator data.</p>
         <div class="tool-chips">
@@ -602,7 +660,10 @@
         <a href="/projects/" class="card-link">View Project →</a>
       </div>
       <div class="project-card">
-        <div class="project-card-tag">Data Quality · Completed</div>
+        <div class="card-meta">
+          <span class="project-card-tag">Data Quality</span>
+          <span class="status-badge status-completed">Completed</span>
+        </div>
         <div class="project-card-title">Employee Data Cleaning</div>
         <p class="project-card-desc">Identified and corrected data quality issues in an employee dataset — duplicates, nulls, invalid salaries, and inconsistent fields.</p>
         <div class="tool-chips">
@@ -621,20 +682,15 @@
   <section class="section">
     <div class="section-eyebrow">interests</div>
     <div class="section-title">What I'm <em>Building Toward</em></div>
-    <div class="focus-grid">
-      <p class="focus-text">
-        I'm especially interested in data science, fraud analytics, AI, operational efficiency, and technical solutions that make complex problems easier to understand and act on.
-      </p>
-      <div class="focus-chips">
-        <span class="focus-chip">Data Science</span>
-        <span class="focus-chip">Fraud Analytics</span>
-        <span class="focus-chip">Artificial Intelligence</span>
-        <span class="focus-chip">Operational Efficiency</span>
-        <span class="focus-chip">Machine Learning</span>
-        <span class="focus-chip">NLP</span>
-        <span class="focus-chip">Technical Support</span>
-        <span class="focus-chip">Analytics Engineering</span>
-      </div>
+    <div class="focus-chips">
+      <span class="focus-chip">Data Science</span>
+      <span class="focus-chip">Fraud Analytics</span>
+      <span class="focus-chip">Artificial Intelligence</span>
+      <span class="focus-chip">Operational Efficiency</span>
+      <span class="focus-chip">Machine Learning</span>
+      <span class="focus-chip">NLP</span>
+      <span class="focus-chip">Technical Support</span>
+      <span class="focus-chip">Analytics Engineering</span>
     </div>
   </section>
 </div>
