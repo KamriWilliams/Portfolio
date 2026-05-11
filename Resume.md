@@ -37,10 +37,10 @@ Technical professional with experience solving production issues, analyzing syst
 
 ### Q2 Software | Application Support Engineer
 
-- Support 20+ financial institutions in production environments
-- Analyze logs and platform behavior to identify root causes
-- Improve onboarding documentation used by 300+ institutions
-- Translate technical issues into clear business language
+- Investigate production issues across 20+ financial institutions using SQL, log analysis, and data validation to identify root causes in high-availability fraud/risk systems
+- Write SQL queries to investigate client-specific reporting and auditing databases for production issue resolution
+- Mentor junior support agents and run daily standups to align team on active escalations and priorities
+- Serve as on-call engineer resolving critical money movement failures for financial institutions, directly mitigating million-dollar transaction risks
 
 ### Wipro | Project Engineer
 
