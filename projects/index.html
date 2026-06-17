@@ -577,11 +577,11 @@
     <div class="project-number">02</div>
     <div class="project-tag">Classification Model</div>
     <div class="project-title">Heart Disease<br><em>Prediction</em></div>
-    <div class="project-subtitle">Logistic Regression · KNN · Model Comparison · ROC-AUC</div>
+    <div class="project-subtitle">Logistic Regression · KNN · Model Comparison · Sensitivity / Recall</div>
     <div class="project-body">
       <div>
         <p class="project-desc">
-          Healthcare data holds patterns that can save lives. Using 303 anonymous patient records and 13 clinical features — from cholesterol to chest pain type — I built and compared two classification models to predict heart disease risk. Logistic Regression came out on top, hitting 90% accuracy and a 0.94 ROC-AUC score. The real story is in why: heart disease risk follows predictable, linear patterns that logistic regression is built for.
+          Healthcare data holds patterns that can save lives. Using 303 anonymous patient records and 13 clinical features — from cholesterol to chest pain type — I built and compared two classification models to predict heart disease risk. Logistic Regression came out on top with 90% accuracy and 0.88 recall (sensitivity) — meaning it correctly identified 88% of patients who actually had heart disease. In a clinical context, minimizing false negatives is what matters most.
         </p>
         <p class="project-desc">
           One limitation I noted: no lifestyle data was available. Factors like diet, smoking, and activity level would paint a fuller picture — a real direction for future work.
@@ -609,9 +609,9 @@
             <div class="stat-note">Outperformed KNN (85%) — best fit for linear clinical patterns</div>
           </div>
           <div class="stat-card">
-            <div class="stat-label">ROC-AUC Score</div>
-            <div class="stat-value">0.94</div>
-            <div class="stat-note">Strong separation between positive and negative cases</div>
+            <div class="stat-label">Recall (Sensitivity) — LR</div>
+            <div class="stat-value">0.88</div>
+            <div class="stat-note">Outperformed KNN (0.84) — prioritizes catching true heart disease cases</div>
           </div>
           <div class="stat-card">
             <div class="stat-label">Patient Records</div>
@@ -624,7 +624,7 @@
             <li><span class="check">✓</span>Scaled numeric features and one-hot encoded categorical variables</li>
             <li><span class="check">✓</span>Split data 80/20 and validated with 5-fold cross-validation</li>
             <li><span class="check">✓</span>Built and compared Logistic Regression and KNN models</li>
-            <li><span class="check">✓</span>Evaluated with accuracy, precision, recall, and ROC-AUC — LR won across all four</li>
+            <li><span class="check">✓</span>Evaluated with accuracy, precision, and recall — prioritized sensitivity to minimize missed diagnoses</li>
           </ul>
         </div>
       </div>
